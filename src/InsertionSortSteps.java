@@ -1,16 +1,29 @@
 import java.util.Scanner;
-
+   import java.util.*;
 public class InsertionSortSteps {
+public static void main(String[] args){
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+int[] a=new int[n];
+for(int i=0;i<n;i++) a[i]=sc.nextInt();
 
-    
-        // TODO: Read n
-        // TODO: Read the array elements
+int e=a[n-1];
+int i=n-2;
 
-        // TODO: Implement the insertion logic:
-        // 1. Store the last element (key)
-        // 2. Iterate backwards from the second-to-last element
-        // 3. If current element > key, shift it right and print array
-        // 4. If current element <= key, insert key and print array (then break)
-        // Note: Don't forget the case where key is the smallest element (index 0)
-    
+while(i>=0 && a[i]>e){
+a[i+1]=a[i];
+for(int j=0;j<n;j++){
+System.out.print(a[j]);
+if(j<n-1) System.out.print(" ");
+}
+System.out.println();
+i--;
+}
+
+a[i+1]=e;
+for(int j=0;j<n;j++){
+System.out.print(a[j]);
+if(j<n-1) System.out.print(" ");
+}
+}
 }
